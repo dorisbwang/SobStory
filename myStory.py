@@ -13,7 +13,7 @@ def myStory_onAppStart(app):
     # needs function for text box
 
     # add button dimensions and placement
-    app.menuButton = Button('menu', 0, 0, 50, 50)
+    app.menuButton = Button('menu', 10, 10, 50, 50)
     app.soblogButton = Button("sob log", 309, 10, 75, 53)
 
 

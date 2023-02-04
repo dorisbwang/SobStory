@@ -16,7 +16,7 @@ def splashScreen_onAppStart(app):
 
     # add button dimensions and placement
     app.logButton = Button('log', 25, 558, 340, 62)
-    app.menuButton = Button('menu', 0, 0, 50, 50)
+    app.menuButton = Button('menu', 10, 10, 50, 50)
 
 def splashScreen_redrawAll(app):
     pilImage = image1.image
