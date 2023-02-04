@@ -6,6 +6,7 @@ from sobLog import *
 from myStory import *
 from menu import *
 from resources import *
+from myLog import *
 
 import sys, os
 
