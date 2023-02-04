@@ -5,9 +5,9 @@ import copy
 
 class SobLog():
     logs = []
-    monthlyCryLog = {"Jan": 1, "Feb": 0, "Mar": 0, "Apr": 0, "May": 0,
-                "Jun": 1, "Jul": 0, "Aug": 3, "Sep": 0, "Oct": 0,
-                "Nov": 0, "Dec": 5 }
+    monthlyCryLog = {"Jan": 0, "Feb": 0, "Mar": 0, "Apr": 0, "May": 0,
+                "Jun": 0, "Jul": 0, "Aug": 0, "Sep": 0, "Oct": 0,
+                "Nov": 0, "Dec": 0 }
 
     reasonLog = {"school": 1, "money":1, "health": 1, "relationship": 1, "work": 1}
 
@@ -19,12 +19,12 @@ class SobLog():
 
         SobLog.logs.append(self)
 
-    
+
     def getDate(self):
         return self.date
     def getReason(self):
         return self.reason
-    
+
     @staticmethod
     def doDateAnalysis():
         for log in SobLog.logs:
@@ -35,7 +35,7 @@ class SobLog():
         for log in SobLog.logs:
             SobLog.reasonAnalysis(log.reason)
         return SobLog.reasonLog
-    
+
     @staticmethod
     def dateAnalysis(date):
         slash = date.find("/")
