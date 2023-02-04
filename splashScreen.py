@@ -5,12 +5,15 @@ from PIL import Image
 # Needs: gif of sob bob, screen
 # Buttons: log sob, menu
 
+app.image1 = Image.open('backgrounds/splash.jpg')
+app.image1 = CMUImage(app.image1)
+
 def splashScreen_onAppStart(app):
     app.width = 340
     app.height = 844
     # background
-    app.image1 = Image.open('backgrounds/splash.jpg')
-    app.image1 = CMUImage(app.image1)
+    # app.image1 = Image.open('backgrounds/splash.jpg')
+    # app.image1 = CMUImage(app.image1)
     # add button dimensions and placement
     app.logButton = Button()
     app.menuButton = Button()
