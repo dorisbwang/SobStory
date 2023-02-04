@@ -8,7 +8,7 @@ image5 = image5.resize((390, 700))
 image5 = CMUImage(image5)
 
 def resources_onAppStart(app):
-    app.width = 340
+    app.width = 390
     app.height = 700
 
     # needs function for text box

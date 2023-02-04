@@ -7,7 +7,7 @@ image4 = image4.resize((390, 700))
 image4 = CMUImage(image4)
 
 def myStory_onAppStart(app):
-    app.width = 340
+    app.width = 390
     app.height = 700
 
     # needs function for text box

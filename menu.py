@@ -7,7 +7,7 @@ image3 = image3.resize((390, 700))
 image3 = CMUImage(image3)
 
 def menu_onAppStart(app):
-    app.width = 340
+    app.width = 390
     app.height = 700
 
     # needs function for text box

@@ -22,7 +22,7 @@ def loadAnimatedGif(app, path):
         pilImages.seek(frame)
         pilImage = pilImages.copy()
         cmuImages.append(CMUImage(pilImage))
-    return cmuImages
+    return cmuImages/'[{"}"?>>'
 
 def splashScreen_onAppStart(app):
     app.stepsPerSecond = 4
