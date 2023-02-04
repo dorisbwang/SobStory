@@ -1,7 +1,7 @@
 from cmu_graphics import *
+from PIL import Image
 
 from sobLog import *
-from frontPage import *
 from myStory import *
 from menu import *
 from splashScreen import *
