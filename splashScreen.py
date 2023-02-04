@@ -49,15 +49,5 @@ def splashScreen_onMousePress(app, mouseX, mouseY):
         # goes to menu screen
         setActiveScreen('menu')
 
-<<<<<<< HEAD
-# from tkinter import *
-
-# root = Tk()
-# root.geometry("200x200")
-
-# textBox = Text(root, width = 60, height = 40)
-# textBox.pack(pady = 10)
-=======
 def splashScreen_onStep(app):
     app.spriteCounter = (1 + app.spriteCounter) % len(app.bobGif)
->>>>>>> main
