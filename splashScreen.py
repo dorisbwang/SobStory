@@ -28,14 +28,8 @@ def splashScreen_onAppStart(app):
     app.stepsPerSecond = 4
     app.width = 390
     app.height = 700
-<<<<<<< HEAD
-    # background
-    app.image1 = Image.open('backgrounds/splash.jpg')
-    app.image1 = CMUImage(app.image1)
-=======
     app.spriteCounter = 0
     app.bobGif = loadAnimatedGif(app, 'backgrounds/splashScreenGif.gif')
->>>>>>> main
     # add button dimensions and placement
     app.logButton = Button('log', 25, 558, 340, 62)
     app.menuButton = Button('menu', 10, 10, 50, 50)
@@ -55,15 +49,5 @@ def splashScreen_onMousePress(app, mouseX, mouseY):
         # goes to menu screen
         setActiveScreen('menu')
 
-<<<<<<< HEAD
-# from tkinter import *
-
-# root = Tk()
-# root.geometry("200x200")
-
-# textBox = Text(root, width = 60, height = 40)
-# textBox.pack(pady = 10)
-=======
 def splashScreen_onStep(app):
     app.spriteCounter = (1 + app.spriteCounter) % len(app.bobGif)
->>>>>>> main
