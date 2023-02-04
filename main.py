@@ -1,11 +1,11 @@
 from cmu_graphics import *
 
-from cryLog import *
+from sobLog import *
 from frontPage import *
 from myStory import *
-from settings import *
+from menu import *
 from splashScreen import *
 
 def main():
-    runAppWithScreens(initialScreen='splashScreen', width= 390, length = 844)
+    runAppWithScreens(initialScreen='splashScreen', width = 390, height = 700)
 main()
