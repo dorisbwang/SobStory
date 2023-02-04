@@ -1,3 +1,4 @@
+from sobLogClass import *
 
 monthlyCryLog = {"Jan": 0, "Feb": 0, "Mar": 0, "Apr": 0, "May": 0,
                 "Jun": 0, "Jul": 0, "Aug": 0, "Sep": 0, "Oct": 0,
@@ -11,21 +12,3 @@ reasonsKeyWords = {"relationship": ["relationship", "heartbreak", "boyfriend", "
             "health" : ["cancer", "health", "sick", "terminal", "death depression"],
             "work" : ["boss", "job", "coworker", "businness","work"],
                     }
-
-def dateAnalysis(dateList):
-    for date in dateList:
-        slash = date.find("/")
-        month = date[0:slash]
-
-        i = 0
-        for m in monthlyCryLog:
-            if i == month:
-                monthlyCryLog[m] = monthlyCryLog[m] + 1
-            i += 1
-
-def reasonAnalysis(log):
-    for reason in reasonsKeyWords:
-        for keyword in reasonsKeyWords[reason]:
-            if keyword in log:
-                    reasonLog[reason] = reasonLog.get(reason, 0) +  1
-                    
