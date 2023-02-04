@@ -5,6 +5,7 @@ from splashScreen import *
 from sobLog import *
 from myStory import *
 from menu import *
+from resources import *
 
 import sys, os
 
