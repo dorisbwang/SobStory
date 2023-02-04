@@ -25,7 +25,7 @@ def loadAnimatedGif(app, path):
     return cmuImages
 
 def splashScreen_onAppStart(app):
-    
+    app.stepsPerSecond = 4
     app.width = 390
     app.height = 700
     app.spriteCounter = 0
@@ -39,7 +39,7 @@ def splashScreen_redrawAll(app):
     pilImage = image1.image
     drawImage(image1, 0, 0)
     sprite = app.bobGif[app.spriteCounter]
-    drawImage(sprite, 100, 100, align='center')
+    drawImage(sprite, 190, 350, align='center')
 
 def splashScreen_onMousePress(app, mouseX, mouseY):
     if app.logButton.buttonPress(mouseX, mouseY):
