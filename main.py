@@ -7,6 +7,7 @@ from myStory import *
 from menu import *
 from resources import *
 from friends import *
+from settings import *
 
 import sys, os
 

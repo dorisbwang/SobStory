@@ -20,6 +20,7 @@ def menu_onAppStart(app):
     app.friendsButton = Button('friends', 48, 307, 293, 60)
     app.musicButton = Button('music', 48, 399, 293, 60)
     app.resourcesButton = Button('rec', 48, 492, 293, 60)
+    app.settingsButton = Button('rec', 48, 585, 293, 60)
 
 
 
@@ -43,5 +44,8 @@ def menu_onMousePress(app, mouseX, mouseY):
     elif app.friendsButton.buttonPress(mouseX, mouseY):
         # goes to menu screen
         setActiveScreen('friends')
+    elif app.settingsButton.buttonPress(mouseX, mouseY):
+        # goes to menu screen
+        setActiveScreen('settings')
     elif app.musicButton.buttonPress(mouseX, mouseY):
         webbrowser.open("https://open.spotify.com/playlist/1o00f6FOrHuNfDJILtz99h?si=e7e45d5024a34f54&nd=1", new=2)
