@@ -9,7 +9,7 @@ class SobLog():
                 "Jun": 1, "Jul": 0, "Aug": 3, "Sep": 0, "Oct": 0,
                 "Nov": 0, "Dec": 5 }
 
-    reasonLog = {"School": 2, "Money":3, "Health": 1, "Relationship": 4}
+    reasonLog = {"school": 1, "money":1, "health": 1, "relationship": 1, "work": 1}
 
     def __init__ (self, date, time, reason, resolution):
         self.date = date
@@ -55,6 +55,7 @@ class SobLog():
     def reasonAnalysis(log):
         for reason in reasonsKeyWords:
             for keyword in reasonsKeyWords[reason]:
+                print(log, "111111log")
                 if keyword in log:
                     SobLog.reasonLog[reason] = SobLog.reasonLog.get(reason, 0) +  1
 
