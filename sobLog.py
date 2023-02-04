@@ -38,14 +38,14 @@ def sobLog_redrawAll(app):
 
     if app.isTypingReason == True:
         #this is the box that shows up when you are typing, make it prettier (change the colors? make a check inside?)
-        drawRect(300, 425, 30, 30)
+        drawCircle(315, 440, 12, fill = 'midnightblue')
     elif app.isTypingResolution == True:
         #this is the box that shows up when you are typing, make it prettier (change the colors? make a check inside?)
-        drawRect(300, 625, 30, 30)
+        drawCircle(315, 640, 12, fill = 'midnightblue')
     elif app.isTypingDate == True:
-        drawRect(175, 189, 14, 14)
+        drawCircle(187, 195, 5, fill = 'white')
     elif app.isTypingTime == True:
-        drawRect(324, 189, 14, 14)
+        drawCircle(338, 195, 5, fill = 'white')
 
     drawReasonResolution(app.reasonInput) #call the function once for reason and once for resolution textbox
     drawReasonResolution(app.resolutionInput)
