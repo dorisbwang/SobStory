@@ -54,4 +54,4 @@ def myLog_onMousePress(app, mouseX, mouseY):
         if 48 <= mouseX <= 48 + 293:
             if 157 + i * 93 <= mouseY <= 157 + 60 + i * 93:
                 print('DHALFHL ASDJHFJKAFHA', i)
-                #app.logClicked = app.sobLogsShown[i]
+                app.logClicked = app.sobLogsShown[i]
