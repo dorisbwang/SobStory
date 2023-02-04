@@ -1,7 +1,7 @@
 from cmu_graphics import *
 from buttonsClass import *
 from PIL import Image
- 
+
 # Needs: gif of sob bob, screen
 # Buttons: log sob, menu
 
@@ -12,10 +12,11 @@ def splashScreen_onAppStart(app):
     app.image1 = Image.open('backgrounds/splash.jpg')
     app.image1 = CMUImage(app.image1)
     # add button dimensions and placement
-    app.logButton = Button()
-    app.menuButton = Button()
+    # app.logButton = Button()
+    # app.menuButton = Button()
 
 def splashScreen_redrawAll(app):
+    drawLabel("this is splash screen", 50, 200)
     pilImage = app.image1.image
     drawImage(app.image1, 500, 200, align='center',
               width=pilImage.width//2,
@@ -29,10 +30,10 @@ def splashScreen_onMousePress(mouseX, mouseY):
         # goes to menu screen
         setActiveScreen('menu')
 
-from tkinter import *
+# from tkinter import *
 
-root = Tk()
-root.geometry("200x200")
+# root = Tk()
+# root.geometry("200x200")
 
-textBox = Text(root, width = 60, height = 40)
-textBox.pack(pady = 10)
+# textBox = Text(root, width = 60, height = 40)
+# textBox.pack(pady = 10)
