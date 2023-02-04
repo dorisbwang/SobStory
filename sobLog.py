@@ -13,12 +13,15 @@ def sobLog_onAppStart(app):
     app.isTypingReason = False
     app.isTypingResolution = False
     app.isTypingDate = False
+    app.isTypingTime = False
     app.reasonInput = ""
     app.resolutionInput = ""
     app.dateInput = ""
+    app.timeInput = ""
     app.reasonFormat = ""
     app.resolutionFormat = ""
     app.dateFormat = ""
+    app.timeFormat = ""
     # needs function for text box
 
     # add button dimensions and placement
@@ -26,6 +29,7 @@ def sobLog_onAppStart(app):
     app.reasonButton = Button("reason", 48, 260, 293, 207)
     app.resolutionButton = Button("resolution", 48, 547, 293, 116)
     app.dateButton = Button("date", 105, 195, 76, 30)
+    app.timeButton = Button("time", 253, 195, 70, 30)
 
 
 def sobLog_redrawAll(app):
@@ -40,11 +44,14 @@ def sobLog_redrawAll(app):
         drawRect(300, 625, 30, 30)
     elif app.isTypingDate == True:
         drawRect(175, 189, 14, 14)
+    elif app.isTypingTime == True:
+        drawRect(324, 189, 14, 14)
 
     drawReasonResolution(app.reasonInput) #call the function once for reason and once for resolution textbox
     drawReasonResolution(app.resolutionInput)
     # drawLabel(app.reasonInput, 60, 270, align = "left", font = "monospace") #38 char in a line
     drawDateResolution(app.dateInput)
+    drawTimeResolution(app.timeInput)
 
 def drawReasonResolution(inputStr):
     resultList = formatReasonResolution(inputStr)
@@ -55,13 +62,18 @@ def drawReasonResolution(inputStr):
 
     for i in range(len(resultList)):
         drawLabel(resultList[i], 60, startY+(12*i), align = "left", font = "monospace")
-
 def drawDateResolution(inputStr):
     resultList = formatReasonResolution(inputStr)
     if inputStr == app.dateInput:
         startY = 195
     for i in range(len(resultList)):
         drawLabel(resultList[i], 105, startY+(12*i), align = "left", font = "monospace", fill = "white", bold = True)
+def drawTimeResolution(inputStr):
+    resultList = formatReasonResolution(inputStr)
+    if inputStr == app.timeInput:
+        startY = 195
+    for i in range(len(resultList)):
+        drawLabel(resultList[i], 253, startY+(12*i), align = "left", font = "monospace", fill = "white", bold = True)
 
 def formatReasonResolution(inputStr):
     resultList = [""] #list with str for each line of the textbox
@@ -75,6 +87,8 @@ def formatReasonResolution(inputStr):
     elif inputStr == app.resolutionInput: 
       maxLines = 9
     elif inputStr == app.dateInput:
+      maxLines = 1
+    elif inputStr == app.timeInput:
       maxLines = 1
     print(maxLines)
     while inputList != []:
@@ -110,6 +124,7 @@ def sobLog_onMousePress(app, mouseX, mouseY):
         if app.isTypingReason == False:
             app.isTypingReason = True
             app.isTypingResolution = False
+            app.isTypingTime = False
             app.isTypingDate = False
             print("typing the reason now")
             #start typing reason
@@ -121,6 +136,7 @@ def sobLog_onMousePress(app, mouseX, mouseY):
         if app.isTypingResolution == False:
             app.isTypingResolution = True
             app.isTypingReason = False
+            app.isTypingTime = False
             app.isTypingDate = False
             print("typing the resolution now")
             #start typing reason
@@ -132,12 +148,25 @@ def sobLog_onMousePress(app, mouseX, mouseY):
         if app.isTypingDate == False:
             app.isTypingDate = True
             app.isTypingResolution = False
+            app.isTypingTime = False
             app.isTypingReason = False
             print("typing the date now")
             #start typing date
             pass
         else:
             app.isTypingDate = False
+    elif app.timeButton.buttonPress(mouseX, mouseY):
+        #toggles for the resolution explanation
+        if app.isTypingTime == False:
+            app.isTypingTime = True
+            app.isTypingDate = False
+            app.isTypingResolution = False
+            app.isTypingReason = False
+            print("typing the date now")
+            #start typing date
+            pass
+        else:
+            app.isTypingTime = False
 
 def sobLog_onKeyPress(app, key):
     if app.isTypingReason:
@@ -146,6 +175,8 @@ def sobLog_onKeyPress(app, key):
         app.resolutionInput = inputMessage(app, key, app.resolutionInput)
     elif app.isTypingDate:
         app.dateInput = inputMessage(app, key, app.dateInput)
+    elif app.isTypingTime:
+        app.timeInput = inputMessage(app, key, app.timeInput)
 
 def inputMessage(app, key, input):
     if key == "backspace":
@@ -156,6 +187,7 @@ def inputMessage(app, key, input):
         app.isTypingReason = False
         app.isTypingResolution = False
         app.isTypingDate = False
+        app.isTypingTime = False
     else:
         input = input + str(key)
     return input
