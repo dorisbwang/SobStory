@@ -8,10 +8,11 @@ y2 = 2**x + 1
 plt.figure()
 plt.plot(x, y1)  
 
-plt.xlabel("I am x")
-plt.ylabel("I am y")
-plt.title("With Labels")
+plt.xlabel("Months")
+plt.ylabel("Number of times cried")
+plt.title("Monthly Cry Log")
 
+# pi chart
 # Creating dataset
 cars = ['AUDI', 'BMW', 'FORD',
         'TESLA', 'JAGUAR', 'MERCEDES']

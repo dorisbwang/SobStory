@@ -5,6 +5,7 @@ from sobLog import *
 from myStory import *
 from menu import *
 from splashScreen import *
+import sys, os
 
 def main():
     runAppWithScreens(initialScreen='splashScreen', width = 390, height = 700)
