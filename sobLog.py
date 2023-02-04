@@ -1,5 +1,6 @@
 from cmu_graphics import *
 from buttonsClass import *
+from sobLogClass import *
 from PIL import Image
 
 image2 = Image.open('backgrounds/log-page-001.jpg')
@@ -26,7 +27,7 @@ def sobLog_onAppStart(app):
 
     # add button dimensions and placement
     app.menuButton = Button('menu', 10, 10, 50, 50)
-    app.logButton = Button("log", 330, 13, 45, 45)
+    app.logEndButton = Button("log", 330, 13, 45, 45)
     app.reasonButton = Button("reason", 48, 260, 293, 207)
     app.resolutionButton = Button("resolution", 48, 547, 293, 116)
     app.dateButton = Button("date", 105, 195, 76, 30)
@@ -161,10 +162,22 @@ def sobLog_onMousePress(app, mouseX, mouseY):
             pass
         else:
             app.isTypingTime = False
-    elif app.logButton.buttonPress(mouseX, mouseY):
+    elif app.logEndButton.buttonPress(mouseX, mouseY):
+        print("ASHFJKAHKLJS")
         #############################################DORIS
-        #app.currLog = SobLog()
-        pass
+        app.currLog = SobLog(app.dateFormat, app.timeFormat, app.reasonFormat, app.resolutionFormat)
+        app.reasonInput = ""
+        app.resolutionInput = ""
+        app.dateInput = ""
+        app.timeInput = ""
+        app.reasonFormat = ""
+        app.resolutionFormat = ""
+        app.dateFormat = ""
+        app.timeFormat = ""
+
+        print(SobLog.logs)
+
+
 
 def sobLog_onKeyPress(app, key):
     if app.isTypingReason:
