@@ -16,14 +16,20 @@ def myLog_onAppStart(app):
     # add button dimensions and placement
     app.menuButton = Button('menu', 10, 10, 50, 50)
     app.soblogButton = Button("sob log", 309, 10, 75, 53)
+    app.sobLogsShown = []
 
+    print(len(SobLog.logs), "THE LENGTH OF SOB LOG")
+
+def myLog_onScreenActivate(app):
     if len(SobLog.logs) > 0:
+        print('PASSED MORE THAN 1 LOG')
         if len(SobLog.logs) >= 5:
             app.sobLogsShown = SobLog.logs[(len(SobLog.logs) - 5): len(SobLog.logs)]
             app.sobLogsShown.reverse()
             print("THIS IS SHOWN", app.sobLogsShown)
         else:
-            app.sobLogsShown = reversed(SobLog.logs)
+            app.sobLogsShown = SobLog.logs[::-1]
+            print(app.sobLogsShown)
 
 
 def myLog_redrawAll(app):
@@ -50,8 +56,9 @@ def myLog_onMousePress(app, mouseX, mouseY):
     width = 293
     height = 60
     delta = 93
-    for i in range(len(app.sobLogsShown)):
-        if 48 <= mouseX <= 48 + 293:
-            if 157 + i * 93 <= mouseY <= 157 + 60 + i * 93:
-                print('DHALFHL ASDJHFJKAFHA', i)
-                app.logClicked = app.sobLogsShown[i]
+    if len(SobLog.logs) > 0:
+        for i in range(len(app.sobLogsShown)):
+            if 48 <= mouseX <= 48 + 293:
+                if 157 + i * 93 <= mouseY <= 157 + 60 + i * 93:
+                    print('DHALFHL ASDJHFJKAFHA', i)
+                    app.logClicked = app.sobLogsShown[i]
