@@ -2,7 +2,7 @@ from cmu_graphics import *
 from buttonsClass import *
 from PIL import Image
 
-image2 = Image.open('backgrounds/log.jpg')
+image2 = Image.open('backgrounds/log-page-001.jpg')
 image2 = image2.resize((390, 700))
 image2 = CMUImage(image2)
 
@@ -26,6 +26,7 @@ def sobLog_onAppStart(app):
 
     # add button dimensions and placement
     app.menuButton = Button('menu', 10, 10, 50, 50)
+    app.logButton = Button("log", 330, 13, 45, 45)
     app.reasonButton = Button("reason", 48, 260, 293, 207)
     app.resolutionButton = Button("resolution", 48, 547, 293, 116)
     app.dateButton = Button("date", 105, 195, 76, 30)
@@ -37,15 +38,13 @@ def sobLog_redrawAll(app):
     drawImage(image2, 0, 0)
 
     if app.isTypingReason == True:
-        #this is the box that shows up when you are typing, make it prettier (change the colors? make a check inside?)
         drawCircle(315, 440, 12, fill = 'midnightblue')
     elif app.isTypingResolution == True:
-        #this is the box that shows up when you are typing, make it prettier (change the colors? make a check inside?)
         drawCircle(315, 640, 12, fill = 'midnightblue')
     elif app.isTypingDate == True:
-        drawCircle(187, 195, 5, fill = 'white')
+        drawCircle(37, 195, 5, fill = 'white')
     elif app.isTypingTime == True:
-        drawCircle(338, 195, 5, fill = 'white')
+        drawCircle(187, 195, 5, fill = 'white')
 
     drawReasonResolution(app.reasonInput) #call the function once for reason and once for resolution textbox
     drawReasonResolution(app.resolutionInput)
@@ -84,13 +83,12 @@ def formatReasonResolution(inputStr):
     numLines = 0
     if inputStr == app.reasonInput:
       maxLines = 16
-    elif inputStr == app.resolutionInput: 
+    elif inputStr == app.resolutionInput:
       maxLines = 9
     elif inputStr == app.dateInput:
       maxLines = 1
     elif inputStr == app.timeInput:
       maxLines = 1
-    print(maxLines)
     while inputList != []:
         #the max number of lines stuff doesnt work so i will try to
         # fix this tomorrow if there is time because this is a small detail
@@ -98,7 +96,7 @@ def formatReasonResolution(inputStr):
             maxLength = 32
         elif numLines > maxLines - 1:
             if inputStr == app.resolutionInput:
-                drawRect(300, 625, 30, 30, fill = "red") 
+                drawRect(300, 625, 30, 30, fill = "red")
             elif inputStr == app.reasonInput:
                 drawRect(300, 425, 30, 30, fill = "red")
             elif inputStr == app.dateInput:
@@ -126,7 +124,6 @@ def sobLog_onMousePress(app, mouseX, mouseY):
             app.isTypingResolution = False
             app.isTypingTime = False
             app.isTypingDate = False
-            print("typing the reason now")
             #start typing reason
             pass
         else:
@@ -138,7 +135,6 @@ def sobLog_onMousePress(app, mouseX, mouseY):
             app.isTypingReason = False
             app.isTypingTime = False
             app.isTypingDate = False
-            print("typing the resolution now")
             #start typing reason
             pass
         else:
@@ -150,7 +146,6 @@ def sobLog_onMousePress(app, mouseX, mouseY):
             app.isTypingResolution = False
             app.isTypingTime = False
             app.isTypingReason = False
-            print("typing the date now")
             #start typing date
             pass
         else:
@@ -162,11 +157,12 @@ def sobLog_onMousePress(app, mouseX, mouseY):
             app.isTypingDate = False
             app.isTypingResolution = False
             app.isTypingReason = False
-            print("typing the date now")
             #start typing date
             pass
         else:
             app.isTypingTime = False
+    elif app.logButton.buttonPress(mouseX, mouseY):
+        #############################################DORIS
 
 def sobLog_onKeyPress(app, key):
     if app.isTypingReason:
