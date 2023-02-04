@@ -29,7 +29,7 @@ def splashScreen_onAppStart(app):
     app.width = 390
     app.height = 700
     app.spriteCounter = 0
-    bobGif = loadAnimatedGif(app, 'backgrounds/splashScreenGif.gif')
+    app.bobGif = loadAnimatedGif(app, 'backgrounds/splashScreenGif.gif')
     # add button dimensions and placement
     app.logButton = Button('log', 25, 558, 340, 62)
     app.menuButton = Button('menu', 10, 10, 50, 50)
@@ -38,7 +38,7 @@ def splashScreen_onAppStart(app):
 def splashScreen_redrawAll(app):
     pilImage = image1.image
     drawImage(image1, 0, 0)
-    sprite = bobGif[app.spriteCounter]
+    sprite = app.bobGif[app.spriteCounter]
     drawImage(sprite, 100, 100, align='center')
 
 def splashScreen_onMousePress(app, mouseX, mouseY):
@@ -50,4 +50,4 @@ def splashScreen_onMousePress(app, mouseX, mouseY):
         setActiveScreen('menu')
 
 def splashScreen_onStep(app):
-    app.spriteCounter = (1 + app.spriteCounter) % len(bobGif)
+    app.spriteCounter = (1 + app.spriteCounter) % len(app.bobGif)
