@@ -15,7 +15,7 @@ image1 = CMUImage(image1)
 def splashScreen_onAppStart(app):
     app.width = 390
     app.height = 700
-    #app.sprites = loadAnimatedGif(app, '/Users/sapavlinek/Documents/GitHub/SobStory/backgrounds/splashScreenGif.gif')
+    #app.sprites = loadAnimatedGif(app, 'backgrounds/splashScreenGif.gif')
     app.spriteCounter = 0
     # add button dimensions and placement
     app.logButton = Button('log', 25, 558, 340, 62)
