@@ -55,10 +55,3 @@ def myLog_onMousePress(app, mouseX, mouseY):
             if 157 + i * 93 <= mouseY <= 157 + 60 + i * 93:
                 print('DHALFHL ASDJHFJKAFHA', i)
                 #app.logClicked = app.sobLogsShown[i]
-
-
-
-# def main():
-#     runAppWithScreens(initialScreen = 'myLog', width = 390, height = 700)
-
-# main()

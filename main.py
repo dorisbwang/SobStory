@@ -7,6 +7,8 @@ from myStory import *
 from menu import *
 from resources import *
 from myLog import *
+from friends import *
+from settings import *
 
 import sys, os
 
