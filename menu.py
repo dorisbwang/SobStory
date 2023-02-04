@@ -3,7 +3,6 @@ from buttonsClass import *
 from PIL import Image
 import webbrowser
 
-
 image3 = Image.open('backgrounds/menu.jpg')
 image3 = image3.resize((390, 700))
 image3 = CMUImage(image3)
