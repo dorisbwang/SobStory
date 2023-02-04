@@ -5,6 +5,11 @@ import copy
 
 class SobLog():
     logs = []
+    monthlyCryLog = {"Jan": 1, "Feb": 0, "Mar": 0, "Apr": 0, "May": 0,
+                "Jun": 1, "Jul": 0, "Aug": 3, "Sep": 0, "Oct": 0,
+                "Nov": 0, "Dec": 5 }
+
+    reasonLog = {"School": 2, "Money":3, "Health": 1, "Relationship": 4}
 
     def __init__ (self, date, time, reason, resolution):
         self.date = date
@@ -13,9 +18,6 @@ class SobLog():
         self.resolution = resolution
 
         SobLog.logs.append(self)
-        for log in SobLog.logs:
-            dateAnalysis(log.date)
-            reasonAnalysis(log.reason)
 
     
     def getDate(self):
@@ -26,34 +28,32 @@ class SobLog():
     @staticmethod
     def doDateAnalysis():
         for log in SobLog.logs:
-            dateAnalysis(log.date)
-            return monthlyCryLog
+            SobLog.dateAnalysis(log.date)
+        return SobLog.monthlyCryLog
+    @staticmethod
     def doReasonAnalysis():
         for log in SobLog.logs:
-            reasonAnalysis(log.reason)
-            return reasonLog
+            SobLog.reasonAnalysis(log.reason)
+        return SobLog.reasonLog
     
-def dateAnalysis(date):
+    @staticmethod
+    def dateAnalysis(date):
         slash = date.find("/")
         month = date[0:slash]
 
-        i = 0
-        for m in monthlyCryLog:
-            if i == month:
-                monthlyCryLog[m] = monthlyCryLog[m] + 1
+        i = 1
+        print(date, "date")
+        for m in SobLog.monthlyCryLog:
+            if i == int(month):
+                SobLog.monthlyCryLog[m] = SobLog.monthlyCryLog[m] + 1
             i += 1
+    @staticmethod
+    def reasonAnalysis(log):
+        for reason in reasonsKeyWords:
+            for keyword in reasonsKeyWords[reason]:
+                if keyword in log:
+                    SobLog.reasonLog[reason] = SobLog.reasonLog.get(reason, 0) +  1
 
-def reasonAnalysis(log):
-    for reason in reasonsKeyWords:
-        for keyword in reasonsKeyWords[reason]:
-            if keyword in log:
-                    reasonLog[reason] = reasonLog.get(reason, 0) +  1
-
-monthlyCryLog = {"Jan": 0, "Feb": 0, "Mar": 0, "Apr": 0, "May": 0,
-                "Jun": 0, "Jul": 0, "Aug": 0, "Sep": 0, "Oct": 0,
-                "Nov": 0, "Dec": 0 }
-
-reasonLog = {"School": 2, "Money":3, "Health": 1, "Relationship": 4}
 
 reasonsKeyWords = {"relationship": ["relationship", "heartbreak", "boyfriend", "girlfriend", "love", "kiss", "date", "breakup", "divorce"],
             "school": ["math", "class", "school", "grades", "exams", "concepts", "computer science"],
@@ -62,7 +62,7 @@ reasonsKeyWords = {"relationship": ["relationship", "heartbreak", "boyfriend", "
             "health" : ["cancer", "health", "sick", "terminal", "death depression"],
             "work" : ["boss", "job", "coworker", "businness","work"],
                     }
-print(reasonLog)
+
 
 
 
