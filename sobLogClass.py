@@ -24,11 +24,11 @@ class SobLog():
         return self.reason
     
     @staticmethod
-    def doDateAnalysis(self):
+    def doDateAnalysis():
         for log in SobLog.logs:
             dateAnalysis(log.date)
             return monthlyCryLog
-    def doReasonAnalysis(self):
+    def doReasonAnalysis():
         for log in SobLog.logs:
             reasonAnalysis(log.reason)
             return reasonLog
