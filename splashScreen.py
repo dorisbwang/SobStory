@@ -39,7 +39,7 @@ def splashScreen_redrawAll(app):
     pilImage = image1.image
     drawImage(image1, 0, 0)
     sprite = app.bobGif[app.spriteCounter]
-    drawImage(sprite, 190, 350, align='center')
+    drawImage(sprite, 180, 350, align='center')
 
 def splashScreen_onMousePress(app, mouseX, mouseY):
     if app.logButton.buttonPress(mouseX, mouseY):
@@ -49,5 +49,15 @@ def splashScreen_onMousePress(app, mouseX, mouseY):
         # goes to menu screen
         setActiveScreen('menu')
 
+<<<<<<< HEAD
+# from tkinter import *
+
+# root = Tk()
+# root.geometry("200x200")
+
+# textBox = Text(root, width = 60, height = 40)
+# textBox.pack(pady = 10)
+=======
 def splashScreen_onStep(app):
     app.spriteCounter = (1 + app.spriteCounter) % len(app.bobGif)
+>>>>>>> main

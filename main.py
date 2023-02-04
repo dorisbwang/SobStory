@@ -1,10 +1,11 @@
 from cmu_graphics import *
 from PIL import Image
 
+from splashScreen import *
 from sobLog import *
 from myStory import *
 from menu import *
-from splashScreen import *
+
 import sys, os
 
 def main():
