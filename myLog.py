@@ -11,6 +11,8 @@ def myLog_onAppStart(app):
     app.width = 390
     app.height = 700
 
+    app.logClicked = None
+
     # add button dimensions and placement
     app.menuButton = Button('menu', 10, 10, 50, 50)
     app.soblogButton = Button("sob log", 309, 10, 75, 53)
@@ -22,6 +24,7 @@ def myLog_onAppStart(app):
             print("THIS IS SHOWN", app.sobLogsShown)
         else:
             app.sobLogsShown = reversed(SobLog.logs)
+
 
 def myLog_redrawAll(app):
     pilImage = image6.image
@@ -42,7 +45,20 @@ def myLog_onMousePress(app, mouseX, mouseY):
         # goes to menu screen
         setActiveScreen('sobLog')
 
-def main():
-    runAppWithScreens(initialScreen = 'myLog', width = 390, height = 700)
+    left = 48
+    top = 157
+    width = 293
+    height = 60
+    delta = 93
+    for i in range(len(app.sobLogsShown)):
+        if 48 <= mouseX <= 48 + 293:
+            if 157 + i * 93 <= mouseY <= 157 + 60 + i * 93:
+                print('DHALFHL ASDJHFJKAFHA', i)
+                #app.logClicked = app.sobLogsShown[i]
 
-main()
+
+
+# def main():
+#     runAppWithScreens(initialScreen = 'myLog', width = 390, height = 700)
+
+# main()
