@@ -6,36 +6,26 @@ from PIL import Image
 # Buttons: log sob, menu
 
 image1 = Image.open('backgrounds/splash.jpg')
+image1 = image1.resize((390, 700))
 image1 = CMUImage(image1)
 
+
 def splashScreen_onAppStart(app):
-    app.width = 340
+    app.width = 390
     app.height = 700
-    # background
-    # app.image1 = Image.open('backgrounds/splash.jpg')
-    # app.image1 = CMUImage(app.image1)
+
     # add button dimensions and placement
-    # app.logButton = Button()
-    # app.menuButton = Button()
+    app.logButton = Button('log', 25, 558, 340, 62)
+    app.menuButton = Button('menu', 0, 0, 50, 50)
 
 def splashScreen_redrawAll(app):
-    pilImage = app.image1.image
-    drawImage(app.image1, 500, 200, align='center',
-              width=pilImage.width//2,
-              height=pilImage.height//2)
+    pilImage = image1.image
+    drawImage(image1, 0, 0)
 
-def splashScreen_onMousePress(mouseX, mouseY):
+def splashScreen_onMousePress(app, mouseX, mouseY):
     if app.logButton.buttonPress(mouseX, mouseY):
         # goes to sob log screen
         setActiveScreen('sobLog')
     elif app.menuButton.buttonPress(mouseX, mouseY):
         # goes to menu screen
         setActiveScreen('menu')
-
-from tkinter import *
-
-root = Tk()
-root.geometry("200x200")
-
-textBox = Text(root, width = 60, height = 40)
-textBox.pack(pady = 10)

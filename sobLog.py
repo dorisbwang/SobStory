@@ -2,26 +2,25 @@ from cmu_graphics import *
 from buttonsClass import *
 from PIL import Image
 
-def sobLog_onScreenStart(app):
-    app.top = 0
-    app.left = 0
+image2 = Image.open('backgrounds/log.jpg')
+image2 = image2.resize((390, 700))
+image2 = CMUImage(image2)
+
+def sobLog_onAppStart(app):
     app.width = 340
-    app.height = 844
-    #background
-    app.image = Image.open('backgrounds/splash.jpg')
-    app.image = CMUImage(app.image)
+    app.height = 700
+
+    # needs function for text box
 
     # add button dimensions and placement
-    app.logButton = Button()
-    app.menuButton = Button()
+    app.menuButton = Button('menu', 0, 0, 50, 50)
+
 
 def sobLog_redrawAll(app):
-    pilImage = app.image.image
-    drawImage(app.image, 500, 200, align='center',
-              width=pilImage.width//2,
-              height=pilImage.height//2)
+    pilImage = image2.image
+    drawImage(image2, 0, 0)
 
-def sobLog_onMousePress(mouseX, mouseY):
+def sobLog_onMousePress(app, mouseX, mouseY):
     if app.menuButton.buttonPress(mouseX, mouseY):
         # goes to menu screen
         setActiveScreen('menu')
