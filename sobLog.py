@@ -163,6 +163,8 @@ def sobLog_onMousePress(app, mouseX, mouseY):
             app.isTypingTime = False
     elif app.logButton.buttonPress(mouseX, mouseY):
         #############################################DORIS
+        #app.currLog = SobLog()
+        pass
 
 def sobLog_onKeyPress(app, key):
     if app.isTypingReason:
