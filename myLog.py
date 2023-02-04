@@ -41,8 +41,3 @@ def myLog_onMousePress(app, mouseX, mouseY):
     elif app.soblogButton.buttonPress(mouseX, mouseY):
         # goes to menu screen
         setActiveScreen('sobLog')
-
-def main():
-    runAppWithScreens(initialScreen = 'myLog', width = 390, height = 700)
-
-main()
