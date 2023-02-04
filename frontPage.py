@@ -1,3 +1,1 @@
 print("front Page")
-
-print("")
