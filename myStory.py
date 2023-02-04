@@ -1,6 +1,8 @@
 from cmu_graphics import *
 from buttonsClass import *
 from graphStuff import *
+from dataAnalysis import *
+from sobLogClass import *
 from PIL import Image
 
 image4 = Image.open('backgrounds/myStory.jpg')
@@ -18,11 +20,9 @@ def myStory_onAppStart(app):
     app.soblogButton = Button("sob log", 309, 10, 75, 53)
     app.arrowButton = Button("arrow", 335, 337, 26, 26)
     app.pieChart = PieChart("Sob Log",
-                            {"School": 10, "Love": 10, "money": 0, "Sad": 0, "work": 0})
+                            SobLog.doReasonAnalysis())
     app.monthChart = LineChart("Monthly Sob Log",
-                                {"Jan": 2, "Feb": 4, "Mar": 2, "Apr": 3, "May": 2,
-                                "Jun": 0, "Jul": 2, "Aug": 4, "Sep": 0, "Oct": 7,
-                                "Nov": 5, "Dec": 4 })
+                                SobLog.doDateAnalysis())
 
 def myStory_redrawAll(app):
     pilImage = image4.image
