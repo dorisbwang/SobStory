@@ -176,6 +176,7 @@ def sobLog_onMousePress(app, mouseX, mouseY):
         app.timeFormat = ""
 
         print(SobLog.logs)
+        setActiveScreen('resources')
 
 
 
