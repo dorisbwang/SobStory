@@ -8,7 +8,7 @@ image4 = image4.resize((390, 700))
 image4 = CMUImage(image4)
 
 def myStory_onAppStart(app):
-    app.width = 340
+    app.width = 390
     app.height = 700
 
     # needs function for text box
@@ -17,12 +17,12 @@ def myStory_onAppStart(app):
     app.menuButton = Button('menu', 10, 10, 50, 50)
     app.soblogButton = Button("sob log", 309, 10, 75, 53)
     app.arrowButton = Button("arrow", 335, 337, 26, 26)
-    app.pieChart = PieChart("Sob Log", 
-                            {"School": 2, "Love": 3, "money": 1, "Sad": 3, "work": 6})
-    app.monthChart = LineChart("Monthly Sob Log", 
-                                {"Jan": 1, "Feb": 2, "Mar": 0, "Apr": 5, "May": 0,
-                                "Jun": 0, "Jul": 3, "Aug": 0, "Sep": 4, "Oct": 0,
-                                "Nov": 0, "Dec": 7 })
+    app.pieChart = PieChart("Sob Log",
+                            {"School": 10, "Love": 10, "money": 0, "Sad": 0, "work": 0})
+    app.monthChart = LineChart("Monthly Sob Log",
+                                {"Jan": 2, "Feb": 4, "Mar": 2, "Apr": 3, "May": 2,
+                                "Jun": 0, "Jul": 2, "Aug": 4, "Sep": 0, "Oct": 7,
+                                "Nov": 5, "Dec": 4 })
 
 def myStory_redrawAll(app):
     pilImage = image4.image
