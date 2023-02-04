@@ -9,6 +9,7 @@ from resources import *
 from myLog import *
 from friends import *
 from settings import *
+from logSummary import *
 
 import sys, os
 

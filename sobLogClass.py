@@ -24,6 +24,10 @@ class SobLog():
         return self.date
     def getReason(self):
         return self.reason
+    def getTime(self):
+        return self.time
+    def getResolution(self):
+        return self.resolution
     
     @staticmethod
     def doDateAnalysis():
