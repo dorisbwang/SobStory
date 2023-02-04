@@ -19,10 +19,14 @@ def myStory_onAppStart(app):
     app.menuButton = Button('menu', 10, 10, 50, 50)
     app.soblogButton = Button("sob log", 309, 10, 75, 53)
     app.arrowButton = Button("arrow", 335, 337, 26, 26)
+    reasonData = SobLog.reasonLog
+    dateData = SobLog.monthlyCryLog
+    print(reasonData)
+    print(dateData)
     app.pieChart = PieChart("Sob Log",
-                            SobLog.doReasonAnalysis())
+                            reasonData)
     app.monthChart = LineChart("Monthly Sob Log",
-                                SobLog.doDateAnalysis())
+                                dateData)
 
 def myStory_redrawAll(app):
     pilImage = image4.image

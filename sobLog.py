@@ -165,7 +165,7 @@ def sobLog_onMousePress(app, mouseX, mouseY):
     elif app.logEndButton.buttonPress(mouseX, mouseY):
         print("ASHFJKAHKLJS")
         #############################################DORIS
-        app.currLog = SobLog(app.dateFormat, app.timeFormat, app.reasonFormat, app.resolutionFormat)
+        app.currLog = SobLog(app.dateInput, app.timeInput, app.reasonInput, app.resolutionInput)
         app.reasonInput = ""
         app.resolutionInput = ""
         app.dateInput = ""
@@ -174,6 +174,9 @@ def sobLog_onMousePress(app, mouseX, mouseY):
         app.resolutionFormat = ""
         app.dateFormat = ""
         app.timeFormat = ""
+
+        SobLog.doReasonAnalysis()
+        SobLog.doDateAnalysis()
 
         print(SobLog.logs)
         setActiveScreen('resources')
