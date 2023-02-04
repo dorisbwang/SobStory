@@ -40,4 +40,4 @@ def myStory_onMousePress(app, mouseX, mouseY):
         # goes to menu screen
         setActiveScreen('sobLog')
     elif app.arrowButton.buttonPress(mouseX, mouseY):
-        print("move right now")
+        setActiveScreen('myLog')
