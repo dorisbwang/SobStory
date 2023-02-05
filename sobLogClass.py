@@ -9,7 +9,7 @@ class SobLog():
                 "Jun": 0, "Jul": 0, "Aug": 0, "Sep": 0, "Oct": 0,
                 "Nov": 0, "Dec": 0 }
 
-    reasonLog = {"school": 1, "money":1, "health": 1, "relationship": 1, "work": 1}
+    reasonLog = {"school": 0, "money":0, "health": 0, "relationship": 0, "work": 0}
 
     def __init__ (self, date, time, reason, resolution):
         self.date = date
@@ -57,7 +57,7 @@ class SobLog():
 
 
 reasonsKeyWords = {"relationship": ["relationship", "heartbreak", "boyfriend", "girlfriend", "love", "kiss", "date", "breakup", "divorce"],
-            "school": ["math", "class", "school", "grades", "exams", "concepts", "computer science"],
+            "school": ["math", "class", "school", "grades", "exams", "concepts", "computer science", "homework"],
             "family": ["mom", "dad", "brother", "sister", "family", "house", "grandma", "grandpa"],
             "money" : ["payment", "money", "dollars", "debt", "broke"],
             "health" : ["cancer", "health", "sick", "terminal", "death depression"],
